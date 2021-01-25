@@ -1,13 +1,10 @@
-f=open('Perepis.txt','r+')
+f = open('Perepis.txt', 'r+')
+summa=0
 with open('Perepis.txt') as f:
-    l=f.readlines()
-    for i in range(1,len(l)):
-        print(l[i])
-        s=str(l[i])
-        a=s[len(s)-5:len(s)+1]
-        spis=[]
-        spis=a.split()
-        year=int(spis[0])
-        print(year)
-
-
+    for i in f:
+        chislo=int(i[-5:-1])
+        if chislo<1978:
+            print(i[:-13])
+            summa+=1
+    print(summa)
+f.close()
